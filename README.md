@@ -150,4 +150,10 @@ The `subId` is unique per client (the app already has it), so each client gets i
 
 ---
 
+## Contributors
+
+- [@venti1112](https://github.com/venti1112) — Simplified Chinese translation of the app and README ([#9](https://github.com/yukh975/3X-UI-Manager/pull/9))
+
+---
+
 © 2026 Yuriy Khachaturian ([yukh.net](https://yukh.net))

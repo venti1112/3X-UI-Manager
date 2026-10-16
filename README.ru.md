@@ -150,4 +150,10 @@
 
 ---
 
+## Участники
+
+- [@venti1112](https://github.com/venti1112) — перевод приложения и README на китайский (упрощённый) ([#9](https://github.com/yukh975/3X-UI-Manager/pull/9))
+
+---
+
 © 2026 Yuriy Khachaturian ([yukh.net](https://yukh.net))

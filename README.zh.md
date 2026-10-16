@@ -149,4 +149,10 @@
 
 ---
 
+## 贡献者
+
+- [@venti1112](https://github.com/venti1112) — 应用及 README 的简体中文翻译（[#9](https://github.com/yukh975/3X-UI-Manager/pull/9)）
+
+---
+
 © 2026 Yuriy Khachaturian ([yukh.net](https://yukh.net))
