@@ -12,14 +12,16 @@ val LocalAppLanguage = compositionLocalOf { LANG_EN }
 
 /**
  * Translate an English source string to the current UI language. The English
- * text IS the key — anything missing from [ruStrings] falls back to English,
- * so partial coverage degrades gracefully rather than breaking.
+ * text IS the key — anything missing from [ruStrings] or [zhStrings] falls back
+ * to English, so partial coverage degrades gracefully rather than breaking.
  */
 @Composable
 @ReadOnlyComposable
-fun tr(en: String): String =
-    if (LocalAppLanguage.current == LANG_RU) ruStrings[en] ?: en else en
+fun tr(en: String): String = tr(LocalAppLanguage.current, en)
 
 /** Non-composable variant for the rare call site outside composition. */
-fun tr(lang: String, en: String): String =
-    if (lang == LANG_RU) ruStrings[en] ?: en else en
+fun tr(lang: String, en: String): String = when (lang) {
+    LANG_RU -> ruStrings[en] ?: en
+    LANG_ZH -> zhStrings[en] ?: en
+    else -> en
+}

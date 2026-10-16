@@ -1,0 +1,891 @@
+package net.yukh.xui.i18n
+
+/**
+ * Simplified Chinese translations. Key = the English source string passed to tr().
+ * Missing keys fall back to English, so this can grow incrementally.
+ */
+val zhStrings: Map<String, String> = mapOf(
+    "On a TUIC inbound the panel can't enforce a per-client traffic limit or IP limit — limit traffic on the TUIC inbound itself." to "TUIC 入站无法按客户端单独限制流量或 IP 数——请直接在 TUIC 入站上限制流量。",
+    "Keepalive (seconds)" to "Keepalive（秒）",
+    "How often the client sends a keepalive. 25 keeps NAT open and brings an idle peer back after any drop; 0 turns it off." to "客户端发送 keepalive 的间隔。25 可保持 NAT 开启，让空闲对端在断线后恢复；0 表示关闭。",
+    "Device fingerprint" to "设备指纹",
+    "Empty keeps each client's limit. Lowering it removes the extra registered devices." to "留空则各客户端限制不变。调低会移除多出的已注册设备。",
+    "MTProto ad tag" to "MTProto 广告标签",
+    "32 hex characters to set, none to clear, empty to keep. MTProto inbounds only." to "32 个十六进制字符表示设置，none 表示清除，留空表示保持不变。仅限 MTProto 入站。",
+    "Encrypted Happ link" to "加密的 Happ 链接",
+    "Turned off on the panel. Enable \"Encrypted subscription links\" in the panel's settings: Subscription → Happ → Subscription links." to "面板上已关闭。请在面板设置中启用“加密订阅链接”：订阅 → Happ → 订阅链接。",
+    "Too long for a QR code — copy or share the link instead." to "内容过长，无法生成二维码——请改为复制或分享链接。",
+    "Only the Happ app opens this link, but anyone who has it may still recover or share the subscription URL." to "只有 Happ 应用能打开此链接，但拿到它的人仍可能还原或分享订阅地址。",
+    "The subscription URL is longer than the panel allows for Happ links (8192 bytes)." to "订阅地址超出了面板允许的 Happ 链接长度（8192 字节）。",
+    "Couldn't create the Happ link" to "无法创建 Happ 链接",
+    "Retry" to "重试",
+    "Create encrypted link" to "创建加密链接",
+    "The panel is restarting to apply the restored database…" to "面板正在重启以应用已恢复的数据库……",
+    "API tokens come from the backup too: if it doesn't contain this app's token, you'll be asked to reconnect." to "API 令牌同样来自备份：如果其中没有本应用的令牌，将需要重新连接。",
+    "Restored — the panel restarted and is back" to "已恢复——面板已重启并恢复运行",
+    "Restored, but the panel hasn't answered for a minute since its restart" to "已恢复，但面板重启后已有一分钟无响应",
+    "TUIC runs in the panel's own tuic-server process, not in Xray, so it has no transport, TLS/REALITY or sniffing settings. Its certificate, SNI and QUIC options are in the protocol settings JSON below." to "TUIC 运行在面板自带的 tuic-server 进程中，而不是 Xray，因此没有传输、TLS/REALITY 或嗅探设置。其证书、SNI 和 QUIC 选项位于下方的协议设置 JSON 中。",
+    "Comment (panel only)" to "备注（仅面板可见）",
+    "your phone" to "手机时钟",
+    "On the panel" to "面板时间",
+    "Pick date & time" to "选择日期和时间",
+    "Expiry time" to "到期时间",
+    "The panel keeps an address for 30 minutes after the last connection, so this stays empty for anyone who hasn't connected recently." to "面板会在最后一次连接后保留地址 30 分钟，因此最近未连接的客户端此处为空。",
+    "Geodata auto-update" to "Geo 数据自动更新",
+    "Xray downloads these files on schedule and reloads them without a restart. URLs must be HTTPS, and each file has to exist in the panel's bin folder once before Xray can update it." to "Xray 会按计划下载这些文件并无需重启即可重新加载。地址必须为 HTTPS，且每个文件需先出现在面板的 bin 目录中一次，Xray 才能更新它。",
+    "Schedule" to "计划",
+    "Cron (5 fields)" to "Cron（5 个字段）",
+    "Cron must have 5 fields, e.g. 0 4 * * *" to "Cron 必须包含 5 个字段，例如 0 4 * * *",
+    "Download through outbound (optional)" to "通过出站下载（可选）",
+    "Files" to "文件",
+    "No files configured. Reference them in routing rules as ext:geosite_custom.dat:category." to "未配置文件。在路由规则中以 ext:geosite_custom.dat:category 形式引用它们。",
+    "File name" to "文件名",
+    "URL (https)" to "URL（https）",
+    "Each file needs an HTTPS URL." to "每个文件都需要一个 HTTPS 地址。",
+    "File names must be plain names like geosite_custom.dat (no paths)." to "文件名必须是像 geosite_custom.dat 这样的纯文件名（不含路径）。",
+    "Add file" to "添加文件",
+    "Swap" to "交换分区",
+    "Renew on day (0 = interval)" to "每月续期日（0 = 按间隔）",
+    "Max renewals (0 = ∞)" to "最大续期次数（0 = ∞）",
+    "Traffic reset cycle" to "流量重置周期",
+    "Day" to "日",
+    "Device limit (0 = unlimited)" to "设备数限制（0 = 不限）",
+    "Devices" to "设备",
+    "Forwarded ports" to "转发端口",
+    "No devices registered." to "暂无已注册设备。",
+    "Remove" to "移除",
+    "Disable XTLS flow" to "禁用 XTLS flow",
+    "Stops the panel injecting xtls-rprx-vision into this inbound. Vision keeps working on your other inbounds. Needs panel v3.7.0." to "阻止面板为此入站注入 xtls-rprx-vision。其他入站的 Vision 不受影响。需要面板 v3.7.0。",
+    "Scope" to "范围",
+    "Admin (full access)" to "Admin（完全访问）",
+    "Monitor (read-only)" to "Monitor（只读）",
+    "Node sync" to "Node sync（节点同步）",
+    "Everything the panel API can do." to "面板 API 能执行的全部操作。",
+    "Server status and metric history only." to "仅服务器状态和指标历史。",
+    "What a central panel needs: inbounds, clients, restart Xray." to "中心面板所需的权限：入站、客户端、重启 Xray。",
+    "Expires in, days (0 = never)" to "有效期（天，0 = 永不过期）",
+    "Scope and expiry need panel v3.7.0. An older panel ignores them and issues a full-access token." to "范围和有效期需要面板 v3.7.0。旧版面板会忽略它们并签发完全访问令牌。",
+    "until" to "至",
+    "expired" to "已过期",
+    "IP limit allowlist" to "IP 限制白名单",
+    "Addresses the IP limit never counts and never bans, so a shared office or campus address can't use up a client's limit. Comma-separated, IP or CIDR." to "IP 限制既不计入也不封禁的地址，避免共享的办公室或校园地址占满客户端限额。逗号分隔，支持 IP 或 CIDR。",
+    "Reload master credential" to "重新加载主凭据",
+    "Applies a rotated master certificate without restarting the panel. Needs panel v3.7.0." to "无需重启面板即可应用轮换后的主证书。需要面板 v3.7.0。",
+    // Tabs & top-level menu
+    "Dashboard" to "仪表盘",
+    "Inbounds" to "入站",
+    "Clients" to "客户端",
+    "Nodes" to "节点",
+    "Menu" to "菜单",
+    "Xray config" to "Xray 配置",
+    "Settings" to "设置",
+
+    // Common actions
+    "Save" to "保存",
+    "Cancel" to "取消",
+    "Delete" to "删除",
+    "Close" to "关闭",
+    "Panels" to "面板",
+    "Add panel" to "添加面板",
+    "Switch panel" to "切换面板",
+    "Sign out" to "退出登录",
+    "Sign out of this panel?" to "退出此面板？",
+    "The app will forget its saved URL and token." to
+        "应用将忘记已保存的 URL 和令牌。",
+    "Create" to "创建",
+    "Edit" to "编辑",
+    "Add" to "添加",
+    "OK" to "确定",
+    "Update" to "更新",
+    "Restart" to "重启",
+    "Start" to "启动",
+    "Stop" to "停止",
+    "Never" to "从不",
+    "Pick date" to "选择日期",
+
+    // Connect screen
+    "Connect to panel" to "连接到面板",
+    "Panel URL" to "面板 URL",
+    "Include the webBasePath if your admin set one" to "如果管理员设置了 webBasePath，请一并包含",
+    "API token" to "API 令牌",
+    "API Token" to "API 令牌",
+    "Login" to "登录",
+    "Login & password" to "登录名和密码",
+    "Username" to "用户名",
+    "2FA code" to "2FA 验证码",
+    "Leave empty if 2FA is disabled" to "如果未启用 2FA，请留空",
+    "Only required if 2FA is enabled on your account." to "仅在账户启用了 2FA 时需要。",
+    "Allow self-signed TLS" to "允许自签名 TLS",
+    "Disable certificate verification — only enable for your own panel." to
+        "禁用证书验证——仅对你自己的面板启用。",
+    "Subscription base URL (optional)" to "订阅基础 URL（可选）",
+    "Connect" to "连接",
+    "Connecting…" to "连接中……",
+    "Sign in with an API token. Requires panel v3.3.0 or newer." to
+        "使用 API 令牌登录。需要面板 v3.3.0 或更高版本。",
+
+    // Panel alerts (settings + notifications)
+    "Notifications" to "通知",
+    "Panel alerts" to "面板告警",
+    "Client expiry, traffic limits, inbounds & node status" to
+        "客户端到期、流量限制、入站和节点状态",
+    "Days before expiry" to "到期前天数",
+    "Traffic threshold (%)" to "流量阈值（%）",
+    "Checks all saved panels every 30 minutes." to
+        "每 30 分钟检查所有已保存的面板。",
+    "Client alerts" to "客户端告警",
+    "Client expiry and traffic limits" to "客户端到期和流量限制",
+    "Panel, Xray and node status" to "面板、Xray 和节点状态",
+    "Inbounds unreachable" to "入站不可达",
+    "Inbound unreachable" to "入站不可达",
+    "Panel unreachable" to "面板不可达",
+    "Panel port" to "面板端口",
+    "This port on the panel host is probed for reachability (default 443). Per-inbound ports are monitored separately, from each inbound's editor." to
+        "探测面板主机上的此端口以检查可达性（默认 443）。各入站的端口在各个入站编辑器中单独监控。",
+    "Monitor reachability" to "监控可达性",
+    "Panel alerts notify you if this inbound's port stops answering (for inbounds exposed directly, without a reverse proxy)." to
+        "如果此入站的端口停止响应，面板告警会通知你（适用于直接暴露、未经过反向代理的入站）。",
+    "Xray is down" to "Xray 已停止",
+    "Client expired" to "客户端已到期",
+    "Client expires soon" to "客户端即将到期",
+    "d" to "天",
+    "Traffic limit almost reached" to "流量即将用尽",
+    "Node offline" to "节点离线",
+    "Where to get it: open the panel in a browser, go to " +
+        "Settings → Security → API Token, add a token, then copy " +
+        "it here. (3x-ui tokens are full admin — keep it private.)" to
+        "获取方式：在浏览器中打开面板，进入 " +
+            "Settings → Security → API Token，添加一个令牌，然后复制" +
+            "到这里。（3x-ui 令牌拥有完全管理员权限——请妥善保管。）",
+    "Optional. The app reads the subscription base from the panel " +
+        "automatically. Set it here only for a reverse proxy whose " +
+        "public URL differs — e.g. https://host:2096/sub/." to
+        "可选。应用会自动从面板读取订阅基础地址。" +
+            "仅当反向代理的公开 URL 与其不同时才在此设置——" +
+            "例如 https://host:2096/sub/。",
+
+    // Dashboard
+    "Xray" to "Xray",
+    "Running" to "运行中",
+    "Stopped" to "已停止",
+    "Status unknown" to "状态未知",
+    "CPU" to "CPU",
+    "Memory" to "内存",
+    "Disk" to "磁盘",
+    "Online (tap)" to "在线（点击）",
+    "Online" to "在线",
+    "Offline" to "离线",
+    "As the subscriber sees it" to "订阅者视角",
+    "Net ↑ / ↓ per s" to "网络 ↑ / ↓ 每秒",
+    "Connections" to "连接",
+    "Refreshing…" to "刷新中……",
+    "Waiting for first response…" to "等待首次响应……",
+    "Restart Xray?" to "重启 Xray？",
+    "This briefly drops every active client connection." to
+        "所有活动客户端连接将短暂中断。",
+    "Stop Xray?" to "停止 Xray？",
+    "This disconnects every active client until you start Xray again." to
+        "在重新启动 Xray 之前，所有在线客户端都会被断开。",
+    "Nobody connected right now." to "当前无人在线。",
+    "3x-ui panel" to "3x-ui 面板",
+    "Up to date" to "已是最新",
+    "Update 3x-ui?" to "更新 3x-ui？",
+    "version unknown" to "版本未知",
+    "Updating…" to "更新中……",
+    "Restarting…" to "重启中……",
+
+    // Clients
+    "Search email, ID, UUID…" to "搜索邮箱、ID、UUID……",
+    "Announcement" to "公告",
+    "Announcement shown as a banner on the subscription info page. Leave empty for none." to "在订阅信息页以横幅显示的公告。留空则不显示。",
+    "Subscription settings saved" to "订阅设置已保存",
+    "Inbound" to "入站",
+    "MTProto secret" to "MTProto 密钥",
+    "Ad-tag (sponsored channel, 32 hex)" to "广告标签（赞助频道，32 位十六进制）",
+    "Regenerate" to "重新生成",
+    "System default" to "跟随系统",
+    "Speed units" to "速度单位",
+    "Bytes (KB/s)" to "字节（KB/s）",
+    "Bits (Kbit/s)" to "比特（Kbit/s）",
+    "Update channel" to "更新通道",
+    "Stable" to "稳定版",
+    "Experimental" to "实验版",
+    "Stable installs the tested public releases. Experimental installs pre-release builds as soon as they are made and can be unstable." to
+        "稳定版安装经过测试的公开版本。实验版会在预发布构建生成后立即安装，可能不稳定。",
+    "WireGuard allowed IPs" to "WireGuard 允许的 IP",
+    "Comma-separated; leave empty to auto-assign." to "逗号分隔；留空则自动分配。",
+    "Test" to "测试",
+    "Test route" to "测试路由",
+    "Domain or IP" to "域名或 IP",
+    "Port (optional)" to "端口（可选）",
+    "default outbound" to "默认出站",
+    "via" to "经由",
+    "No rule matched — uses the default outbound." to "没有匹配的规则——使用默认出站。",
+    "No clients yet." to "暂无客户端。",
+    "Subscription" to "订阅",
+    "Auto-updating link for all configs" to "自动更新的全部配置链接",
+    "Individual server links" to "单个服务器链接",
+    "New client" to "新建客户端",
+    "Edit client" to "编辑客户端",
+    "Delete client?" to "删除客户端？",
+
+    // Editors — common
+    "Remark" to "备注",
+    "Enabled" to "已启用",
+    "Port" to "端口",
+    "Protocol" to "协议",
+    "Traffic limit (GB, 0 = unlimited)" to "流量限制（GB，0 = 不限）",
+    "Traffic reset" to "流量重置",
+    "Expiry" to "到期",
+    "Sniffing" to "嗅探",
+    "New inbound" to "新建入站",
+    "Edit inbound" to "编辑入站",
+    "Delete inbound" to "删除入站",
+    "Delete inbound?" to "删除入站？",
+    "Add node" to "添加节点",
+    "Edit node" to "编辑节点",
+    "Delete node" to "删除节点",
+    "Delete node?" to "删除节点？",
+    "Name" to "名称",
+    "Value" to "值",
+    "Headers" to "请求头",
+    "Add header" to "添加请求头",
+    "Address (IP or domain)" to "地址（IP 或域名）",
+    "Base path" to "基础路径",
+    "Save changes?" to "保存更改？",
+
+    // Settings / About
+    "Language" to "语言",
+    "English" to "English",
+    "Русский" to "Русский",
+    "About" to "关于",
+    "Version" to "版本",
+    "Application" to "应用",
+
+    // Self-update (GitLab releases)
+    "Check for updates" to "检查更新",
+    "Project on GitHub" to "GitHub 项目",
+    "Our projects" to "我们的项目",
+    "3x-ui manual" to "3x-ui 手册",
+    "Documentation for the panel this app manages" to "本应用所管理面板的文档",
+    "Currency Converter" to "汇率转换器",
+    "Exchange rates for Android, on F-Droid" to "Android 汇率应用，F-Droid 上架",
+    "Tools for network and system administrators" to "面向网络和系统管理员的工具",
+    "Installed from F-Droid — updates come through the F-Droid catalog." to "当前为 F-Droid 安装版——更新通过 F-Droid 目录推送。",
+    "Update available" to "有可用更新",
+    "Later" to "稍后",
+    "Checking for updates…" to "正在检查更新……",
+    "Downloading…" to "下载中……",
+    "You're up to date" to "已是最新版本",
+    "You already have the latest version." to "你已安装最新版本。",
+    "Update check failed" to "检查更新失败",
+    "Couldn't reach the update server. Try again later." to
+        "无法连接更新服务器，请稍后再试。",
+
+    // App lock
+    "App lock" to "应用锁",
+    "Set passcode" to "设置密码",
+    "Change passcode" to "修改密码",
+    "Remove passcode" to "移除密码",
+    "Unlock with fingerprint" to "使用指纹解锁",
+    "Set a 4–8 digit passcode" to "设置 4–8 位数字密码",
+    "Passcode" to "密码",
+    "Confirm passcode" to "确认密码",
+    "Enter passcode" to "输入密码",
+    "Wrong passcode" to "密码错误",
+    "Unlock" to "解锁",
+    "Use passcode" to "使用密码",
+    "Use fingerprint" to "使用指纹",
+
+    // Dashboard (additional)
+    "Load 1·5·15m" to "负载 1·5·15 分钟",
+    "cores" to "核",
+    "Uptime" to "运行时间",
+    "IP" to "IP",
+    "Online clients" to "在线客户端",
+    "Online by server" to "各服务器在线数",
+    "Main server" to "主服务器",
+    // Metric history chart
+    "Load" to "负载",
+    "Network" to "网络",
+    "history" to "历史",
+    "Interval" to "间隔",
+    "No history yet" to "暂无历史数据",
+    "Real-time" to "实时",
+    "30 min" to "30 分钟",
+    "1 hour" to "1 小时",
+    "2 hours" to "2 小时",
+    "3 hours" to "3 小时",
+    "5 hours" to "5 小时",
+    "Xray uptime" to "Xray 运行时间",
+    "Update available:" to "有可用更新：",
+    "Traffic this month" to "本月流量",
+    "since" to "自",
+    "not all inbounds reset monthly" to "并非所有入站都按月重置",
+    "Geo databases" to "Geo 数据库",
+    "Update all" to "全部更新",
+    // Outbounds editor (the word "outbound" is left untranslated in RU)
+    "Add outbound" to "添加出站",
+    "New outbound" to "新建出站",
+    "Edit outbound" to "编辑出站",
+    "Delete outbound?" to "删除出站？",
+    "This outbound" to "此出站",
+    "Done" to "完成",
+    "Tag" to "标签",
+    "Address" to "地址",
+    "Server" to "服务器",
+    "Domain strategy" to "域名策略",
+    "Response type" to "响应类型",
+    "Username (optional)" to "用户名（可选）",
+    "Password (optional)" to "密码（可选）",
+    "default route" to "默认路由",
+    "Move up" to "上移",
+    "Move down" to "下移",
+    "Settings (raw JSON)" to "设置（原始 JSON）",
+    "A structured form for this protocol is coming; edit the raw JSON for now." to
+        "该协议的结构化表单即将推出；暂时请编辑原始 JSON。",
+    "Invalid JSON" to "JSON 无效",
+    // Outbound protocol forms + stream settings + link import
+    "Transport" to "传输",
+    "Security" to "安全",
+    "Mode" to "模式",
+    "Service name" to "服务名",
+    "Header type" to "请求头类型",
+    "ALPN (comma-separated)" to "ALPN（逗号分隔）",
+    "Allow insecure" to "允许不安全连接",
+    "Encryption" to "加密",
+    "Password" to "密码",
+    "Method" to "方式",
+    "UDP over TCP (uot)" to "UDP over TCP (uot)",
+    "Interface" to "接口",
+    "Secret key" to "密钥",
+    "Address (CIDR, comma-separated)" to "地址（CIDR，逗号分隔）",
+    "Peer" to "对端",
+    "Allowed IPs (comma-separated)" to "允许的 IP（逗号分隔）",
+    "Pre-shared key (optional)" to "预共享密钥（可选）",
+    "Import from link" to "从链接导入",
+    "Import from vless:// link" to "从 vless:// 链接导入",
+    "Paste vless:// link" to "粘贴 vless:// 链接",
+    "Import" to "导入",
+    "Not a valid vless:// link" to "不是有效的 vless:// 链接",
+    // Outbound web-parity fields
+    "Send through" to "发送经由",
+    "Strategy" to "策略",
+    "Redirect" to "重定向",
+    "Fragment" to "分片",
+    "Packets" to "数据包",
+    "Length" to "长度",
+    "Max Split" to "最大拆分",
+    "Transmission" to "传输方式",
+    "HTTP camouflage" to "HTTP 伪装",
+    "Multi mode" to "多路模式",
+    "Verify peer name" to "验证对端名称",
+    "Concurrency" to "并发数",
+    "Workers" to "工作线程",
+    "Reserved" to "保留位",
+    "UoT version" to "UoT 版本",
+    "Keep alive" to "Keep-alive",
+    // Routing / DNS / General editor sections
+    "Routing" to "路由",
+    "Routing strategy" to "路由策略",
+    "Routing rules" to "路由规则",
+    "Add rule" to "添加规则",
+    "Export" to "导出",
+    "Export rules" to "导出规则",
+    "Import rules" to "导入规则",
+    "Export outbounds" to "导出出站",
+    "Import outbounds" to "导入出站",
+    "Export DNS servers" to "导出 DNS 服务器",
+    "Import DNS servers" to "导入 DNS 服务器",
+    "Paste JSON" to "粘贴 JSON",
+    "Imported" to "已导入",
+    "Balancers" to "负载均衡",
+    "Add balancer" to "添加负载均衡",
+    "Delete rule?" to "删除规则？",
+    "Delete balancer?" to "删除负载均衡？",
+    "New rule" to "新建规则",
+    "Edit rule" to "编辑规则",
+    "New balancer" to "新建负载均衡",
+    "Edit balancer" to "编辑负载均衡",
+    "Target" to "目标",
+    "Match" to "匹配",
+    "Outbound tag" to "出站标签",
+    "Balancer tag" to "负载均衡标签",
+    "Inbound tags (comma-separated)" to "入站标签（逗号分隔）",
+    "Domain (comma-separated)" to "域名（逗号分隔）",
+    "Destination IP (comma-separated)" to "目标 IP（逗号分隔）",
+    "Source IPs (comma-separated)" to "来源 IP（逗号分隔）",
+    "Source port" to "来源端口",
+    "Protocol (comma-separated)" to "协议（逗号分隔）",
+    "User (comma-separated)" to "用户（逗号分隔）",
+    "VLESS route" to "VLESS 路由",
+    "Selector (comma-separated)" to "选择器（逗号分隔）",
+    "Fallback" to "回退",
+    // DNS
+    "Enable DNS" to "启用 DNS",
+    "DNS tag" to "DNS 标签",
+    "Client IP" to "客户端 IP",
+    "Query strategy" to "查询策略",
+    "Disable cache" to "禁用缓存",
+    "Disable fallback" to "禁用回退",
+    "Disable fallback if match" to "匹配时禁用回退",
+    "Parallel query" to "并行查询",
+    "Use system hosts" to "使用系统 hosts",
+    "DNS servers" to "DNS 服务器",
+    "Add DNS server" to "添加 DNS 服务器",
+    "Delete DNS server?" to "删除 DNS 服务器？",
+    "New DNS server" to "新建 DNS 服务器",
+    "Edit DNS server" to "编辑 DNS 服务器",
+    "IP pool" to "IP 池",
+    "Pool size" to "池大小",
+    "Add FakeDNS" to "添加 FakeDNS",
+    "Domains (comma-separated)" to "域名（逗号分隔）",
+    "Expected IPs (comma-separated)" to "预期 IP（逗号分隔）",
+    "Unexpected IPs (comma-separated)" to "非预期 IP（逗号分隔）",
+    "Skip fallback" to "跳过回退",
+    "Final query" to "最终查询",
+    // General / Logs
+    "General / Logs" to "常规 / 日志",
+    "General" to "常规",
+    "Logs" to "日志",
+    "Statistics" to "统计",
+    "Log level" to "日志级别",
+    "Access log (path, empty = off)" to "Access 日志（路径，空 = 关闭）",
+    "Error log (path, empty = off)" to "Error 日志（路径，空 = 关闭）",
+    "Mask address" to "隐藏地址",
+    "DNS log" to "DNS 日志",
+    "Inbound uplink stats" to "入站上行统计",
+    "Inbound downlink stats" to "入站下行统计",
+    "Outbound uplink stats" to "出站上行统计",
+    "Outbound downlink stats" to "出站下行统计",
+    "Update geo database?" to "更新 Geo 数据库？",
+    "Update all geo databases?" to "更新全部 Geo 数据库？",
+    "Downloads the latest database and restarts Xray, " +
+        "briefly dropping every active connection." to
+        "下载最新数据库并重启 Xray，期间所有活动连接会短暂中断。",
+    "Downloads the latest of every built-in geo database and restarts " +
+        "Xray, briefly dropping every active connection." to
+        "下载所有内置 Geo 数据库的最新版本并重启 Xray，" +
+            "期间所有活动连接会短暂中断。",
+
+    // Clients list & rows
+    "Add client" to "添加客户端",
+    "Clear" to "清除",
+    "No clients match" to "没有匹配的客户端",
+    "(no email)" to "（无邮箱）",
+    "disabled" to "已禁用",
+    "of" to "共",
+    "Expires" to "到期",
+    "Last seen" to "最近在线",
+
+    // Client filters
+    "Filters" to "筛选",
+    "Status" to "状态",
+    "Active" to "活跃",
+    "Disabled" to "已禁用",
+    "Depleted" to "已用尽",
+    "Group" to "分组",
+    "Clear all" to "清除全部",
+    "No clients match the filters" to "没有符合筛选条件的客户端",
+
+    // Client bulk actions
+    "selected" to "已选",
+    "Select all" to "全选",
+    "More" to "更多",
+    "Enable" to "启用",
+    "Disable" to "禁用",
+    "Adjust" to "调整",
+    "Delete selected clients?" to "删除所选客户端？",
+    "Add days (+/-)" to "增加天数（+/-）",
+    "Add traffic (GB, +/-)" to "增加流量（GB，+/-）",
+    "Set flow" to "设置 flow",
+    "No change" to "不改变",
+    "Clear flow" to "清除 flow",
+    "Apply" to "应用",
+    "Export clients" to "导出客户端",
+    "Import clients" to "导入客户端",
+    "IP log" to "IP 记录",
+    "No IPs logged." to "暂无 IP 记录。",
+    "Delete unbound clients" to "删除未绑定的客户端",
+    "Delete unbound clients?" to "删除未绑定的客户端？",
+    "Removes every client not attached to any inbound, with their traffic and links. This can't be undone." to
+        "删除所有未绑定到任何入站的客户端，连同其流量和链接。此操作无法撤销。",
+
+    // Client groups
+    "Groups" to "分组",
+    "Client groups" to "客户端分组",
+    "Create group" to "创建分组",
+    "Rename group" to "重命名分组",
+    "Group name" to "分组名称",
+    "A group with this name already exists." to "已存在同名分组。",
+    "No groups yet." to "暂无分组。",
+    "Create a group and add clients to it — or type a group name right in the client editor." to
+        "创建一个分组并添加客户端——也可以直接在客户端编辑器中输入分组名称。",
+    "Add clients…" to "添加客户端……",
+    "Remove clients…" to "移除客户端……",
+    "Reset traffic" to "重置流量",
+    "Rename" to "重命名",
+    "Delete group" to "删除分组",
+    "Delete the group's clients" to "删除分组内的客户端",
+    "Total" to "总计",
+    "Reset the group's traffic?" to "重置分组流量？",
+    "Only the group's counter starts from zero. Each client keeps its own traffic and limits." to
+        "仅分组的计数器归零。各客户端自身的流量和限制保持不变。",
+    "Delete the group?" to "删除分组？",
+    "The group disappears and its clients are left without a group. The clients themselves stay on the panel." to
+        "分组将被删除，其中的客户端将失去分组。客户端本身仍保留在面板上。",
+    "Delete all clients of the group?" to "删除分组内的所有客户端？",
+    "Every client of the group is deleted from the panel together with its traffic. This cannot be undone." to
+        "分组内的每个客户端都将连同其流量从面板删除。此操作无法撤销。",
+    "Delete clients" to "删除客户端",
+    "Add clients to group" to "添加客户端到分组",
+    "Remove clients from group" to "从分组移除客户端",
+    "Add to group" to "添加到分组",
+    "Remove from group" to "从分组移除",
+    "Clients already in this group are not listed. Their inbounds stay as they are — only the group changes." to
+        "已在此分组中的客户端不会列出。其入站绑定保持不变——只有分组发生变化。",
+    "The clients stay on the panel — they only leave the group." to
+        "客户端仍保留在面板上——只是离开该分组。",
+    "Search clients" to "搜索客户端",
+    "No other clients to add." to "没有其他可添加的客户端。",
+    "This group has no clients yet." to "此分组暂无客户端。",
+    "Couldn't load groups" to "无法加载分组",
+    "Group created" to "分组已创建",
+    "Group renamed" to "分组已重命名",
+    "Group deleted, its clients kept" to "分组已删除，客户端已保留",
+    "Group traffic reset" to "分组流量已重置",
+    "Clients added to the group" to "客户端已添加到分组",
+    "Clients removed from the group" to "客户端已从分组移除",
+    "Clients deleted" to "客户端已删除",
+    "Deleted / skipped" to "已删除 / 已跳过",
+    "Action failed" to "操作失败",
+    "Resetting a group's traffic" to "正在重置分组流量",
+    "Show clients" to "显示客户端",
+    "Hide clients" to "隐藏客户端",
+    "Leave empty to keep the node's current token." to "留空以保留节点当前的令牌。",
+
+    // Client editor (additional)
+    "Email / name" to "邮箱 / 名称",
+    "IP limit (0 = unlimited)" to "IP 限制（0 = 不限）",
+    "Traffic reset period (days, 0 = off)" to "流量重置周期（天，0 = 关闭）",
+    "Telegram ID (optional)" to "Telegram ID（可选）",
+    "Group (optional)" to "分组（可选）",
+    "Comment (optional)" to "备注（可选）",
+    "Create client?" to "创建客户端？",
+    "Create client" to "创建客户端",
+    "Apply changes to" to "将更改应用到",
+
+    // Inbounds list & rows
+    "No inbounds yet." to "暂无入站。",
+    "Add inbound" to "添加入站",
+    "of " to "共 ",
+    "Expires " to "到期 ",
+
+    // Inbound editor (additional)
+    "Listen IP (blank = all)" to "监听 IP（留空 = 全部）",
+    "Path" to "路径",
+    "Host" to "主机",
+    "SNI (server name)" to "SNI（服务器名称）",
+    "Dest (target)" to "Dest（目标）",
+    "Server names (comma-separated)" to "服务器名称（逗号分隔）",
+    "Short IDs (comma-separated)" to "Short ID（逗号分隔）",
+    "Fingerprint" to "指纹",
+    "Public key" to "公钥",
+    "Private key" to "私钥",
+    "Advanced: protocol settings (JSON)" to "高级：协议设置（JSON）",
+    "Advanced: stream settings (JSON)" to "高级：传输设置（JSON）",
+    "Port 62789 is the reserved internal Xray API port — the panel may reject it." to
+        "端口 62789 是保留的 Xray 内部 API 端口——面板可能会拒绝。",
+    "Hide" to "隐藏",
+    "Show" to "显示",
+    // VLESS encryption key generator
+    "Generate VLESS encryption key" to "生成 VLESS 加密密钥",
+    "VLESS encryption key" to "VLESS 加密密钥",
+    "Key generation" to "密钥生成",
+    "Decryption" to "解密",
+    "Insert decryption" to "插入解密配置",
+    "No keys returned." to "未返回任何密钥。",
+    "Decryption goes on this inbound; encryption goes to the clients." to
+        "解密配置用于此入站；加密配置用于客户端。",
+    "Clients are managed on the Clients tab and are kept as-is." to
+        "客户端在“客户端”标签页中管理，此处保持不变。",
+    "Create inbound?" to "创建入站？",
+    "Apply changes to this inbound?" to "将更改应用到此入站？",
+    "This removes the inbound and all its clients. This can't be undone." to
+        "这将删除该入站及其所有客户端。此操作无法撤销。",
+
+    // Nodes list & rows
+    "No nodes. Tap + to add a remote panel." to
+        "暂无节点。点击 + 添加远程面板。",
+    "Add node?" to "添加节点？",
+    "Update node?" to "更新节点？",
+    "The node restarts during the update. If the app reaches the panel through this node, the connection will drop — reconnect manually." to
+        "更新期间节点会重启。如果应用通过此节点连接面板，连接会中断——请手动重新连接。",
+    "If the app reaches the panel through it, the connection will drop — reconnect manually." to
+        "如果应用通过它连接面板，连接会中断——请手动重新连接。",
+    "Connection outbound (empty = direct)" to "连接使用的出站（留空 = 直连）",
+    "Detach its inbounds first" to "请先解除其入站绑定",
+    "Node mTLS" to "节点 mTLS",
+    "Mutual TLS: the API token is optional. Register this panel's CA on the node (menu → Node mTLS)." to
+        "双向 TLS：API 令牌为可选项。在节点上注册此面板的 CA（菜单 → 节点 mTLS）。",
+    "This panel's CA — register it on a node that uses Mutual TLS." to
+        "此面板的 CA——请在启用了双向 TLS 的节点上注册它。",
+    "Copy this panel's CA" to "复制此面板的 CA",
+    "Trusted parent CA — paste a managing panel's CA so it can manage this panel as a node (applied on restart)." to
+        "受信任的上级 CA——粘贴管理面板的 CA，使其能将此面板作为节点管理（重启后生效）。",
+    "Trusted parent CA (PEM)" to "受信任的上级 CA（PEM）",
+    "Update to dev build (latest commit)" to "更新到开发版（最新提交）",
+    "Dev builds are unstable." to "开发版不稳定。",
+    "online" to "在线",
+    "total" to "总计",
+    "offline" to "离线",
+    "Ping" to "延迟",
+    "CPU " to "CPU ",
+    "RAM " to "RAM ",
+    "up " to "运行 ",
+
+    // Node editor (additional)
+    "Scheme" to "协议",
+    "Remark (optional)" to "备注（可选）",
+    "From the node panel: Settings → Security → API Token" to
+        "在节点面板中：Settings → Security → API Token",
+    "TLS verify" to "TLS 验证",
+    "Allow private address" to "允许私有地址",
+    "Permit RFC1918 / LAN addresses" to "允许 RFC1918 / 局域网地址",
+    "The remote panel itself is untouched; it's just removed from this list." to
+        "远程面板本身不受影响，只是从此列表中移除。",
+
+    // Xray config "couldn't load" gate (shown only when the config load fails)
+    "Couldn't load the Xray config" to "无法加载 Xray 配置",
+    "On panel v3.3.0+ the Xray config works with an API token. On older panels it's only exposed to a login session — reconnect with login/password." to
+        "在面板 v3.3.0+ 上，Xray 配置可通过 API 令牌访问。在旧版面板上，它仅对登录会话开放——请使用登录名/密码重新连接。",
+    "Full Xray config — outbounds, routing, DNS, etc. Same as the " to
+        "完整的 Xray 配置——出站、路由、DNS 等。与面板的 ",
+    "panel's Xray Configuration page. Save, then restart Xray to apply." to
+        "Xray Configuration 页面相同。保存后重启 Xray 以生效。",
+    "Outbound test URL" to "出站测试 URL",
+    "xray config (JSON)" to "xray 配置（JSON）",
+    "Save Xray config?" to "保存 Xray 配置？",
+
+    // Client share sheet
+    "No connection links for this client." to "此客户端没有连接链接。",
+    "will be removed from every attached inbound." to
+        "将从所有绑定的入站中移除。",
+    "No subscription URL. On panel v3.3.0+ the app reads the " +
+        "base automatically (token or login). Otherwise set the " +
+        "\"Subscription base URL\" on the connect screen " +
+        "(e.g. https://host:2096/sub/)." to
+        "没有订阅地址。在面板 v3.3.0+ 上，应用会自动读取" +
+            "基础地址（API 令牌或登录均可）。否则请在连接页面设置" +
+            "“订阅基础 URL”" +
+            "（例如 https://host:2096/sub/）。",
+    "Collapse" to "收起",
+    "Expand" to "展开",
+    "Changelog" to "更新日志",
+    "No changelog available." to "暂无更新日志。",
+    "Copy" to "复制",
+    "Share" to "分享",
+    "QR code" to "二维码",
+
+    // Connect screen (icon descriptions)
+    "Hide token" to "隐藏令牌",
+    "Show token" to "显示令牌",
+    "Hide password" to "隐藏密码",
+    "Show password" to "显示密码",
+    "This replaces the panel's Xray configuration. Restart Xray " to
+        "这将替换面板的 Xray 配置。请随后重启 Xray ",
+    "afterwards to apply. A broken config can take Xray down." to
+        "以使其生效。损坏的配置可能导致 Xray 停止运行。",
+
+    // Count suffixes (lowercase, after a number)
+    "clients" to "个客户端",
+    "inbounds" to "个入站",
+
+    // Relative time & expiry words (from Formatters)
+    "Expired" to "已过期",
+    "now" to "刚刚",
+    "s ago" to "秒前",
+    "m ago" to "分钟前",
+    "h ago" to "小时前",
+    "d ago" to "天前",
+
+    // Backup / restore
+    "Backup / restore" to "备份 / 恢复",
+    "Back up" to "备份",
+    "Back up to file" to "备份到文件",
+    "Download the database and save it to a file on this device." to
+        "下载数据库并保存为本机文件。",
+    "The backup is the panel's whole database — settings, inbounds, clients and the Xray config. The panel saves SQLite as x-ui.db and PostgreSQL as x-ui.dump; either restores back here." to
+        "备份包含面板的整个数据库——设置、入站、客户端和 Xray 配置。" +
+            "面板将 SQLite 保存为 x-ui.db，将 PostgreSQL 保存为 x-ui.dump；两者都可恢复回面板。",
+    "Restore" to "恢复",
+    "Restore from file" to "从文件恢复",
+    "Replace the panel database from a backup file. This overwrites everything and restarts Xray — every active connection drops briefly." to
+        "用备份文件替换面板数据库。这将覆盖所有内容并重启 Xray——" +
+            "所有活动连接会短暂中断。",
+    "Restore from this backup?" to "从此备份恢复？",
+    "Importing" to "正在导入",
+    "overwrites the panel database and restarts Xray. This can't be undone." to
+        "将覆盖面板数据库并重启 Xray。此操作无法撤销。",
+    "Backup saved" to "备份已保存",
+    "Couldn't write the backup file" to "无法写入备份文件",
+    "Couldn't read the selected file" to "无法读取所选文件",
+    "Restored — Xray restarted" to "已恢复——Xray 已重启",
+    "Backup failed" to "备份失败",
+    "Restore failed" to "恢复失败",
+
+    // Outbound subscriptions (panel "Subscriptions" on the Outbounds page)
+    "Outbound subscriptions" to "出站订阅",
+    "Your panel version doesn't support this yet. Update the panel to the latest version to use it." to
+        "你的面板版本尚不支持此功能。请将面板更新到最新版本后使用。",
+    "No subscriptions yet." to "暂无订阅。",
+    "Add a subscription URL and the panel will keep its servers available as outbounds." to
+        "添加订阅地址后，面板会将其服务器作为出站保持可用。",
+    "Add subscription" to "添加订阅",
+    "Edit subscription" to "编辑订阅",
+    "Delete this subscription?" to "删除此订阅？",
+    "Subscription URL" to "订阅地址",
+    "Tag prefix" to "标签前缀",
+    "Update interval, min" to "更新间隔（分钟）",
+    "Before manual outbounds" to "置于手动出站之前",
+    "Allow insecure TLS" to "允许不安全的 TLS",
+    "Preview" to "预览",
+    "No outbounds found at this URL." to "此地址未找到任何出站。",
+    "Found" to "已找到",
+    "Refresh all" to "全部刷新",
+    "Refresh now" to "立即刷新",
+    "Last fetch" to "上次获取",
+    "never" to "从未",
+    "Every" to "每",
+    "min" to "分钟",
+    "Saved — restart Xray to apply" to "已保存——重启 Xray 以生效",
+    "Xray is restarting…" to "Xray 正在重启……",
+
+    // Panel admin (account / API tokens / restart)
+    "Panel admin" to "面板管理",
+    "Admin account" to "管理员账户",
+    "Change the panel login username and password. Enter the current ones to confirm." to
+        "更改面板登录用户名和密码。请输入当前凭据以确认。",
+    "Current username" to "当前用户名",
+    "Current password" to "当前密码",
+    "New username" to "新用户名",
+    "New password" to "新密码",
+    "Change credentials" to "更改凭据",
+    "Change credentials?" to "更改凭据？",
+    "The panel login changes immediately. Your API token keeps working, but other sessions are signed out." to
+        "面板登录信息将立即更改。你的 API 令牌仍然有效，但其他会话会被登出。",
+    "Change" to "更改",
+    "API tokens" to "API 令牌",
+    "No API tokens yet." to "暂无 API 令牌。",
+    "Create token" to "创建令牌",
+    "Token name" to "令牌名称",
+    "Token created" to "令牌已创建",
+    "Copy it now — it's shown only once and can't be retrieved later." to
+        "请立即复制——它只显示一次，之后无法找回。",
+    "Copy & close" to "复制并关闭",
+    "Delete token?" to "删除令牌？",
+    "Apps using" to "使用该令牌的应用",
+    "will stop working. This can't be undone." to "将停止工作。此操作无法撤销。",
+    "Email (SMTP)" to "邮件（SMTP）",
+    "Address shown in the From header of panel emails. Leave empty to use the SMTP username." to
+        "面板邮件 From 头中显示的地址。留空则使用 SMTP 用户名。",
+    "From address" to "发件人地址",
+    "Sender name" to "发件人名称",
+    "Email settings saved" to "邮件设置已保存",
+    "Consecutive failed probes before an \"outbound down\" alert fires. 1 = alert on the first failure." to
+        "触发“出站故障”告警前允许的连续探测失败次数。1 = 首次失败即告警。",
+    "Outbound-down threshold" to "出站故障阈值",
+    "Notification settings saved" to "通知设置已保存",
+    "Panel" to "面板",
+    "Restart the panel service. The app's connection drops for a few seconds while it comes back." to
+        "重启面板服务。在它恢复期间，应用的连接会中断几秒钟。",
+    "Restart panel" to "重启面板",
+    "Restart panel?" to "重启面板？",
+    "The panel service restarts and the app reconnects in a few seconds." to
+        "面板服务将重启，应用会在几秒后重新连接。",
+
+    // Auth lost mid-session (bounced back to Connect)
+    "Your API token is no longer valid. Reconnect with a working one." to
+        "你的 API 令牌已失效。请使用有效的令牌重新连接。",
+    "Your session is no longer valid. Sign in again." to
+        "你的会话已失效。请重新登录。",
+
+    // 0.15.1 — xray editors
+    "ID" to "ID",
+    "The name a Lua DNS script uses to pick this server" to "Lua DNS 脚本用于选择此服务器的名称",
+    "Lua Script" to "Lua 脚本",
+    "Path to a .lua file defining HandleDNSQuery, absolute or relative to the Xray bin folder. The script then answers every query and reaches the servers only through its own code. Xray will not start if the file is missing or invalid." to
+        "定义 HandleDNSQuery 的 .lua 文件路径，可为绝对路径或相对于 Xray bin 目录。此后脚本将应答所有查询，并仅通过自身代码访问服务器。如果文件缺失或无效，Xray 将无法启动。",
+    "Routing Script" to "路由脚本",
+    "Path to a .lua file defining HandleRoute, absolute or relative to the Xray bin folder. The script then picks every route and Xray ignores all routing rules, the panel's api rule included: send the api inbound to the api outbound or traffic stats and live client changes stop. Xray will not start if the file is missing or invalid." to
+        "定义 HandleRoute 的 .lua 文件路径，可为绝对路径或相对于 Xray bin 目录。此后脚本将接管所有路由选择，Xray 会忽略全部路由规则，包括面板的 api 规则：请将 api 入站指向 api 出站，否则流量统计和客户端实时变更将失效。如果文件缺失或无效，Xray 将无法启动。",
+    "A routing script is set under General / Logs, so Xray ignores these rules." to
+        "已在“常规 / 日志”中设置路由脚本，因此 Xray 会忽略这些规则。",
+    // 0.15.1 — clients & nodes
+    "MASQUE: client email cannot contain \":\"" to "MASQUE：客户端邮箱不能包含 “:”",
+    "Weekly renewal is on (set in the web panel). A reset period or a renewal day turns it off." to
+        "已启用每周续期（在 Web 面板中设置）。设置重置周期或续期日会将其关闭。",
+    "JSON subscription" to "JSON 订阅",
+    "Xray JSON configs. MASQUE connections are only in this one." to
+        "Xray JSON 配置。MASQUE 连接只包含在此订阅中。",
+    "This link carries post-quantum keys and is too dense for a QR code — copy or share it instead." to
+        "此链接包含后量子密钥，内容过于密集，不适合生成二维码——请改为复制或分享。",
+    "Certificate SHA-256 pin" to "证书 SHA-256 指纹",
+    "SHA-256 of the node's certificate, hex or base64." to "节点证书的 SHA-256，十六进制或 base64。",
+    // 0.15.1 — inbounds
+    "Address pool" to "地址池",
+    "Tunnel addresses are leased from these prefixes — at most one IPv4 and one IPv6." to
+        "隧道地址从这些前缀中分配——最多一个 IPv4 和一个 IPv6。",
+    "MASQUE clients sign in with email and password. They get the connection from the JSON subscription: MASQUE has no share link." to
+        "MASQUE 客户端使用邮箱和密码登录。连接信息来自 JSON 订阅：MASQUE 没有分享链接。",
+    "XDRIVE storage is edited in the stream settings JSON below. Its security stays None: Xray would read TLS here as the storage API's client TLS." to
+        "XDRIVE 存储在下方传输设置 JSON 中编辑。其安全类型保持 None：Xray 会将其中的 TLS 视为存储 API 的客户端 TLS。",
+    "Certificate file" to "证书文件",
+    "Key file" to "密钥文件",
+    "Use system CA" to "使用系统 CA",
+    "Verify the server against the server OS's CA store instead of Xray's bundled roots — needed for a private CA. Needs panel v3.10.0." to
+        "使用服务器操作系统的 CA 存储而非 Xray 内置根证书来验证服务器——私有 CA 需要此项。需要面板 v3.10.0。",
+    // observatory
+    "Observatory" to "观测器",
+    "No connection observer is active. One is added automatically when you create a Least Ping or Least Load balancer — or a Random / Round-robin balancer with a fallback — so observer-backed balancers can check outbound health before choosing a target." to
+        "当前没有活动的连接观测器。创建 Least Ping 或 Least Load 负载均衡——或带回退的 Random / Round-robin 负载均衡——时会自动添加，以便依赖观测器的负载均衡在选择目标前检查出站健康状况。",
+    "Observers are managed automatically from your balancers. Tune how they probe below — the watched outbounds follow your balancer selectors." to
+        "观测器由你的负载均衡自动管理。可在下方调整探测方式——被观测的出站跟随负载均衡的选择器。",
+    "This config contains both Observatory and Burst Observatory. Xray uses one global observer, so this mixed legacy state is not supported; saving balancers will normalize it to one observer." to
+        "此配置同时包含 Observatory 和 Burst Observatory。Xray 只使用一个全局观测器，因此不支持这种遗留的混合状态；保存负载均衡会将其归一为一个观测器。",
+    "Watched Outbounds" to "被观测的出站",
+    "Outbound tags this observer probes. Managed automatically from your balancers." to
+        "此观测器探测的出站标签。由你的负载均衡自动管理。",
+    "Probe URL" to "探测 URL",
+    "URL fetched to measure each outbound. Should return HTTP 204." to
+        "用于测量每个出站的请求地址。应返回 HTTP 204。",
+    "Probe Interval" to "探测间隔",
+    "How often to probe each outbound, e.g. 30s, 1m, 2h45m." to "探测每个出站的频率，例如 30s、1m、2h45m。",
+    "Concurrent Probing" to "并发探测",
+    "Probe all watched outbounds at once instead of one-by-one. Faster, but more visible on the network." to
+        "一次探测所有被观测的出站，而非逐一探测。速度更快，但在网络上更显眼。",
+    "Probe Destination" to "探测目标",
+    "Connectivity Check" to "连通性检查",
+    "Optional local-network check URL, tried only after the destination fails. Leave empty to skip." to
+        "可选的本地网络检查地址，仅在目标失败后尝试。留空则跳过。",
+    "Average time between probes per outbound, e.g. 1m. Minimum 10s." to
+        "每个出站两次探测之间的平均时间，例如 1m。最小 10s。",
+    "Probe Timeout" to "探测超时",
+    "How long to wait for a probe before it counts as failed, e.g. 5s." to
+        "探测多久无响应即计为失败，例如 5s。",
+    "Sampling Count" to "采样数量",
+    "Number of recent probe results kept to score each outbound." to
+        "为评估每个出站而保留的最近探测结果数量。",
+    "HTTP Method" to "HTTP 方法",
+    "HTTP method used for probes." to "探测所使用的 HTTP 方法。",
+
+    // apply on save
+    "Saved and applied" to "已保存并应用",
+    "panel's Xray Configuration page. The panel applies it on save — live where it can, restarting Xray only when a change needs it." to
+        "Xray Configuration 页面相同。面板会在保存时应用——能热更新则热更新，仅在更改需要时才重启 Xray。",
+    "This replaces the panel's Xray configuration and applies it right away. A broken config can take Xray down." to
+        "这将替换面板的 Xray 配置并立即应用。损坏的配置可能导致 Xray 停止运行。",
+    "Saved — the panel applies it within 30 s" to "已保存——面板会在 30 秒内应用",
+    "Done — the panel applies it within 30 s" to "完成——面板会在 30 秒内应用",
+    "Refreshed — the panel applies it within 30 s" to "已刷新——面板会在 30 秒内应用",
+)

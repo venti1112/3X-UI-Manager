@@ -10,9 +10,11 @@ import javax.inject.Singleton
 /** Supported UI languages. */
 const val LANG_EN = "en"
 const val LANG_RU = "ru"
+const val LANG_ZH = "zh"
 
 /** The stored preference meaning "follow the device language" — the default,
- *  so a Russian phone gets a Russian app without visiting Settings first. */
+ *  so a Russian or Chinese phone gets the app in its language without visiting
+ *  Settings first. */
 const val LANG_SYSTEM = ""
 
 /**
@@ -21,8 +23,12 @@ const val LANG_SYSTEM = ""
  * we don't translate falls back to English.
  */
 fun resolveLanguage(preference: String, systemLanguage: String): String = when (preference) {
-    LANG_RU, LANG_EN -> preference
-    else -> if (systemLanguage == LANG_RU) LANG_RU else LANG_EN
+    LANG_RU, LANG_EN, LANG_ZH -> preference
+    else -> when (systemLanguage) {
+        LANG_RU -> LANG_RU
+        LANG_ZH -> LANG_ZH
+        else -> LANG_EN
+    }
 }
 
 /**

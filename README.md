@@ -10,7 +10,7 @@ This branch (`main`) holds the **Android** app (Kotlin + Jetpack Compose), built
 
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg) ![Platform: Android 7+](https://img.shields.io/badge/Android-7%2B-3DDC84?logo=android&logoColor=white) ![Made with Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4)
 
-🇷🇺 [Версия на русском](README.ru.md) · 📖 [User manual](docs/3X-UI-MANAGER.en.md) · 📝 [Changelog](CHANGELOG.md)
+🇷🇺 [Версия на русском](README.ru.md) · 🇨🇳 [中文版](README.zh.md) · 📖 [User manual](docs/3X-UI-MANAGER.en.md) · 📝 [Changelog](CHANGELOG.md)
 
 ---
 
@@ -108,7 +108,7 @@ Structured editors over the panel's Xray config — each round-trips the **whole
 ### Other
 - **In-app updates**: the app checks its own [GitLab releases](#ci--releases) on launch and from a **Check for updates** button in **Settings** (⋮ menu). When a newer version is available it shows the release notes and, in one tap, downloads the APK and hands it to the system installer — an in-place update (releases are signed with the same key). No account or token needed; the releases are public.
 - **App lock**: an optional 4–8 digit passcode (+ biometric unlock) in **Settings** (⋮ menu). It guards the **signed-in panel UI only** — re-locking when the app is backgrounded while connected and on launch when a saved session is restored. It is **not** asked on the Connect screen (signed out) or right after a fresh manual sign-in.
-- **Language**: English (default) or Russian, switchable in **Settings** (⋮ menu) — no restart needed.
+- **Language**: English (default), Russian, or Chinese, switchable in **Settings** (⋮ menu) — no restart needed.
 - Confirmation dialog on every **save** and **delete** so nothing changes by accident.
 
 ---

@@ -10,6 +10,7 @@ class LanguageResolveTest {
     @Test
     fun `system default follows the device language`() {
         assertEquals(LANG_RU, resolveLanguage(LANG_SYSTEM, "ru"))
+        assertEquals(LANG_ZH, resolveLanguage(LANG_SYSTEM, "zh"))
         assertEquals(LANG_EN, resolveLanguage(LANG_SYSTEM, "en"))
     }
 
@@ -23,11 +24,14 @@ class LanguageResolveTest {
     fun `an explicit choice wins over the device language`() {
         assertEquals(LANG_EN, resolveLanguage(LANG_EN, "ru"))
         assertEquals(LANG_RU, resolveLanguage(LANG_RU, "en"))
+        assertEquals(LANG_ZH, resolveLanguage(LANG_ZH, "en"))
+        assertEquals(LANG_ZH, resolveLanguage(LANG_ZH, "ru"))
     }
 
     @Test
     fun `an unknown stored value behaves like system default`() {
         assertEquals(LANG_RU, resolveLanguage("zz", "ru"))
+        assertEquals(LANG_ZH, resolveLanguage("zz", "zh"))
         assertEquals(LANG_EN, resolveLanguage("zz", "fr"))
     }
 }
