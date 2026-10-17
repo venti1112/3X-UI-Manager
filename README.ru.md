@@ -35,6 +35,7 @@
 | --- | --- | --- |
 | **[3X-UI-MANAGER.ru.md](docs/3X-UI-MANAGER.ru.md)** · [PDF](docs/pdf/3X-UI-MANAGER.ru.pdf) | 🇷🇺 Русский | Markdown + PDF |
 | **[3X-UI-MANAGER.en.md](docs/3X-UI-MANAGER.en.md)** · [PDF](docs/pdf/3X-UI-MANAGER.en.pdf) | 🇬🇧 English | Markdown + PDF |
+| **[3X-UI-MANAGER.zh.md](docs/3X-UI-MANAGER.zh.md)** · [PDF](docs/pdf/3X-UI-MANAGER.zh.pdf) | 🇨🇳 中文 (упрощённый) | Markdown + PDF |
 
 ---
 
